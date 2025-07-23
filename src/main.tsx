@@ -3,11 +3,24 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 import Dashboard from './pages/dashboard.tsx'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import StakePage from './pages/stake.tsx'
+import WithdrawPage from './pages/withdraw.tsx'
+import { Navbar } from './components/navbar.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
+    <BrowserRouter>
     <App>
-      <Dashboard />
+    <Navbar />
+        <main className="pt-20 px-6 space-y-8 pb-7">
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/stake" element={<StakePage />} />
+            <Route path="/withdraw" element={<WithdrawPage />} />
+          </Routes>
+        </main>
     </App>
+    </BrowserRouter>
   </StrictMode>,
 )

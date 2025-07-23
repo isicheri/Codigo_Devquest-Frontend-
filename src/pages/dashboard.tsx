@@ -1,13 +1,9 @@
 // src/pages/dashboard.tsx
-import  { useState } from "react"
-import StakeForm from "@/components/stake/StakeForm"
 import StatsCards from "../components/stats/StatsCards";
-import WithdrawForm from "@/components/withdraw/WithdrawForm"
 import { ValidatorList } from "@/components/validator/ValidatorList";
 import { StakerActivityTable } from "@/components/stakers/StakerActivityTable";
 import { RewardsSummary } from "@/components/rewards/RewardsSummary";
 import { RewardsChart } from "@/components/charts/RewardsChart";
-import { Navbar } from "@/components/navbar";
 
 
 const dummyActivity: {
@@ -42,44 +38,8 @@ const dummyValidators = [
 
 export default function Dashboard() {
 
-    const [loadingStake, setLoadingStake] = useState(false)
-    const [loadingWithdraw, setLoadingWithdraw] = useState(false);
-
-  const handleStake = async (amount: number) => {
-    setLoadingStake(true)
-    // TODO: call your Solana contract deposit logic here
-    console.log("Staking amount:", amount)
-    await new Promise((res) => setTimeout(res, 1000)) // simulate delay
-    setLoadingStake(false)
-  }
-
-  const handleStakeWithSlippage = async (amount: number, slippage: number) => {
-    setLoadingStake(true)
-    console.log("Staking with slippage:", amount, slippage)
-    await new Promise((res) => setTimeout(res, 1000))
-    setLoadingStake(false)
-  }
-
-    const handleWithdraw = async (amount: number) => {
-    setLoadingWithdraw(true)
-    // TODO: Add your withdraw contract call here
-    console.log("Withdraw amount:", amount)
-    await new Promise((res) => setTimeout(res, 1000))
-    setLoadingWithdraw(false)
-  }
-
-  const handleWithdrawWithSlippage = async (amount: number, slippage: number) => {
-    setLoadingWithdraw(true)
-    console.log("Withdraw with slippage:", amount, slippage)
-    await new Promise((res) => setTimeout(res, 1000))
-    setLoadingWithdraw(false)
-  }
-
-
   return (
     <>
-    <Navbar />
-      <main className="pt-20 px-6 space-y-8 pb-7">
       <h1 className="text-3xl font-semibold">Stake Pool Dashboard</h1>
       <StatsCards data={dummyStats} />
 
@@ -92,23 +52,7 @@ export default function Dashboard() {
   />
       </section>
 
-      <section>
-        <h2 className="text-xl font-semibold mb-4">Stake SOL</h2>
-        <StakeForm
-          onStake={handleStake}
-          onStakeWithSlippage={handleStakeWithSlippage}
-          isLoading={loadingStake}
-        />
-      </section>
-
-      <section>
-        <h2 className="text-xl font-semibold mb-4">Withdraw SOL</h2>
-        <WithdrawForm
-          onWithdraw={handleWithdraw}
-          onWithdrawWithSlippage={handleWithdrawWithSlippage}
-          isLoading={loadingWithdraw}
-        />
-      </section>
+  
 
       <section>
         <h2 className="text-xl font-semibold mb-4">Validators</h2>
@@ -126,7 +70,6 @@ export default function Dashboard() {
         </p>
         <StakerActivityTable activities={dummyActivity} />
       </section>
-    </main>
     </>
   )
 }
