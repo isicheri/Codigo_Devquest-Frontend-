@@ -40,7 +40,7 @@ export default function Dashboard() {
 
   return (
     <>
-      <h1 className="text-3xl font-semibold">Stake Pool Dashboard</h1>
+      <h1 className="text-3xl bitcount-700">Stake Pool Dashboard</h1>
       <StatsCards data={dummyStats} />
 
       <section>

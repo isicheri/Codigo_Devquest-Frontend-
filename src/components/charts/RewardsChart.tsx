@@ -1,13 +1,12 @@
 "use client";
 
 import {
-  LineChart,
-  Line,
+  AreaChart,
+  Area,
   XAxis,
   YAxis,
   Tooltip,
   ResponsiveContainer,
-  CartesianGrid,
 } from "recharts";
 
 const dummyChartData = [
@@ -25,13 +24,24 @@ export const RewardsChart = () => {
     <div className="p-4 border rounded-lg bg-background shadow-sm">
       <h2 className="text-xl font-semibold mb-4">Weekly Rewards</h2>
       <ResponsiveContainer width="100%" height={300}>
-        <LineChart data={dummyChartData}>
-          <CartesianGrid strokeDasharray="3 3" />
+        <AreaChart data={dummyChartData}>
+          <defs>
+            <linearGradient id="colorRewards" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="#8b5cf6" stopOpacity={0.8} />
+              <stop offset="95%" stopColor="#8b5cf6" stopOpacity={0} />
+            </linearGradient>
+          </defs>
           <XAxis dataKey="day" />
           <YAxis />
           <Tooltip />
-          <Line type="monotone" dataKey="rewards" stroke="#8b5cf6" strokeWidth={2} />
-        </LineChart>
+          <Area
+            type="monotone"
+            dataKey="rewards"
+            stroke="#8b5cf6"
+            fillOpacity={1}
+            fill="url(#colorRewards)"
+          />
+        </AreaChart>
       </ResponsiveContainer>
     </div>
   );

@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap');
+
+@font-face {
+  font-family: 'Bitcount';
+  src: url('https://fonts.gstatic.com/s/bitcount/v1/Bitcount-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+.bitcount-400 {
+  font-family: "Bitcount", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
+}
+
+@font-face {
+  font-family: 'Bitcount';
+  src: url('https://fonts.gstatic.com/s/bitcount/v1/Bitcount-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+.bitcount-700 {
+  font-family: "Bitcount", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
+}
