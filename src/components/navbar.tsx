@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ModeToggle } from "@/components/mode-toggle"
+import {motion} from "framer-motion"
 import { cn } from "@/lib/utils"
 import {
   Drawer,
@@ -16,7 +17,11 @@ export const Navbar = () => {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 backdrop-blur-sm bg-background/70 border-b border-border">
+    <motion.header 
+     initial={{ y: -20, opacity: 0 }}
+  animate={{ y: 0, opacity: 1 }}
+  transition={{ duration: 0.4, ease: "easeOut" }}
+    className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 backdrop-blur-sm bg-background/70 border-b border-border">
       <div className="flex items-center space-x-4">
         {/* Brand */}
         <span className="text-xl font-bold text-violet-600 cursor-grab">
@@ -84,6 +89,6 @@ export const Navbar = () => {
           Connect Wallet
         </Button>
       </div>
-    </header>
+    </motion.header>
   )
 }

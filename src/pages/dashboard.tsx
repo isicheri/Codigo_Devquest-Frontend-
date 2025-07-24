@@ -1,4 +1,5 @@
 // src/pages/dashboard.tsx
+import {motion} from "framer-motion"
 import StatsCards from "../components/stats/StatsCards";
 import { ValidatorList } from "@/components/validator/ValidatorList";
 import { StakerActivityTable } from "@/components/stakers/StakerActivityTable";
@@ -39,37 +40,45 @@ const dummyValidators = [
 export default function Dashboard() {
 
   return (
-    <>
-      <h1 className="text-3xl bitcount-700">Stake Pool Dashboard</h1>
-      <StatsCards data={dummyStats} />
+   <motion.div
+  initial={{ opacity: 0, y: 10 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.3 }}
+>
+  <h1 className="text-4xl font-bold mb-8 bg-gradient-to-r from-purple-500 via-pink-500 to-indigo-500 bg-clip-text text-transparent">
+    Stake Pool Dashboard
+  </h1>
 
-      <section>
-        <h2 className="text-xl font-semibold mb-4">Rewards Summary</h2>
-        <RewardsSummary
-    total={dummyRewards.total}
-    claimed={dummyRewards.claimed}
-    unclaimed={dummyRewards.unclaimed}
-  />
-      </section>
+  <div className="mb-12">
+    <StatsCards data={dummyStats} />
+  </div>
 
-  
+  <section className="mb-12">
+    <h2 className="text-2xl font-semibold mb-4">Rewards Summary</h2>
+    <RewardsSummary
+      total={dummyRewards.total}
+      claimed={dummyRewards.claimed}
+      unclaimed={dummyRewards.unclaimed}
+    />
+  </section>
 
-      <section>
-        <h2 className="text-xl font-semibold mb-4">Validators</h2>
-        <ValidatorList validators={dummyValidators} />
-      </section>
+  <section className="mb-12">
+    <h2 className="text-2xl font-semibold mb-4">Validators</h2>
+    <ValidatorList validators={dummyValidators} />
+  </section>
 
-      <section>
-        <RewardsChart />
-      </section>
+  <section className="mb-12">
+    <h2 className="text-2xl font-semibold mb-4">Rewards Chart</h2>
+    <RewardsChart />
+  </section>
 
-      <section>
-        <h2 className="text-xl font-semibold mb-4">Staker Activity</h2>
-        <p className="text-sm text-muted-foreground mb-4">
-          View the latest staker activity on the platform.
-        </p>
-        <StakerActivityTable activities={dummyActivity} />
-      </section>
-    </>
+  <section className="mb-12">
+    <h2 className="text-2xl font-semibold mb-2">Staker Activity</h2>
+    <p className="text-sm text-muted-foreground mb-4">
+      View the latest staker activity on the platform.
+    </p>
+    <StakerActivityTable activities={dummyActivity} />
+  </section>
+</motion.div>
   )
 }

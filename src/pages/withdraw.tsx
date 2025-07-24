@@ -23,9 +23,8 @@ function WithdrawPage() {
       }
   return (
     <div className="flex flex-col items-center justify-center h-screen">
-      <h1 className="text-2xl font-bold mb-4">Withdraw Page</h1>
-      <section>
-             <h2 className="text-xl font-semibold mb-4">Withdraw SOL</h2>
+      <h1 className="text-3xl font-semibold mb-4 bg-gradient-to-r from-purple-500 via-pink-500 to-indigo-500 bg-clip-text text-transparent">Withdraw Your Tokens</h1>
+      <section className="w-full max-w-md p-6  rounded-lg shadow-md">
              <WithdrawForm
                onWithdraw={handleWithdraw}
                onWithdrawWithSlippage={handleWithdrawWithSlippage}

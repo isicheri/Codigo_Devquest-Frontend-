@@ -1,4 +1,4 @@
-import { useState } from "react"
+import React, { useState } from "react"
 import StakeForm from "@/components/stake/StakeForm"
 
 
@@ -21,9 +21,8 @@ function StakePage() {
   }
   return (
     <div className="flex flex-col items-center justify-center h-screen">
-      <h1>Stake Your Tokens</h1>
-       <section>
-              <h2 className="text-xl font-semibold mb-4">Stake SOL</h2>
+      <h1  className="text-3xl font-semibold mb-4 bg-gradient-to-r from-purple-500 via-pink-500 to-indigo-500 bg-clip-text text-transparent">Stake Your Tokens</h1>
+       <section className="w-full max-w-md p-6  rounded-lg shadow-md">
               <StakeForm
                 onStake={handleStake}
                 onStakeWithSlippage={handleStakeWithSlippage}
