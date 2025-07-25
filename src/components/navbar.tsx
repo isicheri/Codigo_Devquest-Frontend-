@@ -82,26 +82,43 @@ export const Navbar = () => {
                   </a>
                 </div>
               </div>
+              {connected && (
+  <div className="w-full flex justify-center items-center md:hidden pt-4 border-t">
+    <Button 
+      variant="outline" 
+      size="sm" 
+      className="w-[90%] bg-red-500! hover:bg-red-600 text-white flex items-center justify-center space-x-2 mb-2 h-12"
+      onClick={() => {
+        disconnect()
+        setOpen(false) // also close drawer
+      }}
+    >
+      <LogOut className="h-4 w-4" />
+      <span>Disconnect Wallet</span>
+    </Button>
+  </div>
+)}
+
             </DrawerContent>
           </Drawer>
         </div>
       </div>
 
       {/* Right side */}
-      <div className="flex items-center gap-1 sm:gap-3 justify-end overflow-hidden truncate max-w-full">
-        <ModeToggle />
-         <WalletMultiButton className="text-xs px-3 cursor-grab min-w-[120px]" />
+     <div className="flex items-center gap-1 sm:gap-3 justify-end overflow-hidden truncate max-w-full">
+  <ModeToggle />
+  <WalletMultiButton className="text-xs px-3 cursor-grab! min-w-[120px]" />
   {connected && (
     <Button 
       variant="outline" 
       size="sm" 
-  className="text-xs cursor-grab bg-red-500! hover:bg-red-600 text-white flex items-center space-x-2 h-12"   
-     onClick={() => disconnect()}
+      className="hidden md:flex text-xs bg-red-500! hover:bg-red-600 text-white items-center space-x-2 h-12"
+      onClick={() => disconnect()}
     >
-     <LogOut className="h-8 w-4" />
+      <LogOut className="h-4 w-4" />
     </Button>
   )}
-      </div>
+</div>
     </motion.header>
   )
 }
