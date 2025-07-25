@@ -8,13 +8,15 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import StakePage from './pages/stake.tsx'
 import WithdrawPage from './pages/withdraw.tsx'
 import { Navbar } from './components/navbar.tsx'
+import WalletContextProvider from './lib/providers/WalletProviders.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
+    <WalletContextProvider>
     <App>
     <Navbar />
-        <main className="pt-20 px-6 space-y-8 pb-7">
+        <main className="pt-35 px-6 space-y-8 pb-7">
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/stake" element={<StakePage />} />
@@ -22,6 +24,7 @@ createRoot(document.getElementById('root')!).render(
           </Routes>
         </main>
     </App>
+    </WalletContextProvider>
     </BrowserRouter>
   </StrictMode>,
 )

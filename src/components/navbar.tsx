@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ModeToggle } from "@/components/mode-toggle"
+import { LogOut } from "lucide-react"
 import {motion} from "framer-motion"
 import { cn } from "@/lib/utils"
 import {
@@ -12,9 +13,13 @@ import {
   DrawerClose,
 } from "@/components/ui/drawer"
 import { Menu, X } from "lucide-react"
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui"
+import { useWallet } from "@solana/wallet-adapter-react"
+
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false)
+  const {  connected,disconnect } = useWallet()
 
   return (
     <motion.header 
@@ -83,11 +88,19 @@ export const Navbar = () => {
       </div>
 
       {/* Right side */}
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center gap-1 sm:gap-3 justify-end overflow-hidden truncate max-w-full">
         <ModeToggle />
-        <Button variant="outline" className="text-xs px-3 cursor-grab">
-          Connect Wallet
-        </Button>
+         <WalletMultiButton className="text-xs px-3 cursor-grab min-w-[120px]" />
+  {connected && (
+    <Button 
+      variant="outline" 
+      size="sm" 
+  className="text-xs cursor-grab bg-red-500! hover:bg-red-600 text-white flex items-center space-x-2 h-12"   
+     onClick={() => disconnect()}
+    >
+     <LogOut className="h-8 w-4" />
+    </Button>
+  )}
       </div>
     </motion.header>
   )
