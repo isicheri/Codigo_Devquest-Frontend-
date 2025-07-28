@@ -13,7 +13,7 @@ import {
   DrawerClose,
 } from "@/components/ui/drawer"
 import { Menu, X } from "lucide-react"
-import { WalletMultiButton } from "@solana/wallet-adapter-react-ui"
+import { WalletMultiButton,WalletDisconnectButton } from "@solana/wallet-adapter-react-ui"
 import { useWallet } from "@solana/wallet-adapter-react"
 
 
@@ -84,21 +84,9 @@ export const Navbar = () => {
               </div>
               {connected && (
   <div className="w-full flex justify-center items-center md:hidden pt-4 border-t">
-    <Button 
-      variant="outline" 
-      size="sm" 
-      className="w-[90%] bg-red-500! hover:bg-red-600 text-white flex items-center justify-center space-x-2 mb-2 h-12"
-      onClick={() => {
-        disconnect()
-        setOpen(false) // also close drawer
-      }}
-    >
-      <LogOut className="h-4 w-4" />
-      <span>Disconnect Wallet</span>
-    </Button>
+    <WalletDisconnectButton className="text-xs px-3 cursor-grab! min-w-[120px] bg-red-500! hover:bg-red-600 text-white items-center space-x-2 h-12" />
   </div>
 )}
-
             </DrawerContent>
           </Drawer>
         </div>
@@ -109,14 +97,9 @@ export const Navbar = () => {
   <ModeToggle />
   <WalletMultiButton className="text-xs px-3 cursor-grab! min-w-[120px]" />
   {connected && (
-    <Button 
-      variant="outline" 
-      size="sm" 
-      className="hidden md:flex text-xs bg-red-500! hover:bg-red-600 text-white items-center space-x-2 h-12"
-      onClick={() => disconnect()}
-    >
-      <LogOut className="h-4 w-4" />
-    </Button>
+    <div className="hidden md:flex">
+      <WalletDisconnectButton  />
+    </div>
   )}
 </div>
     </motion.header>

@@ -1,0 +1,3124 @@
+{
+  "address": "HESK3Y4UViEL9KoSMjJQ1uR2LTReh2fJ7iNNMhD4enxc",
+  "metadata": {
+    "name": "anchor_spl_stake_pool",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "add_validator_to_pool",
+      "discriminator": [
+        181,
+        6,
+        29,
+        25,
+        192,
+        211,
+        190,
+        187
+      ],
+      "accounts": [
+        {
+          "name": "stake_pool",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "staker",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "signer": true
+        },
+        {
+          "name": "reserve",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "stake_pool_withdraw",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ]
+        },
+        {
+          "name": "validator_list",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "stake",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "validator",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ]
+        },
+        {
+          "name": "sysvar_rent",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "address": "SysvarRent111111111111111111111111111111111"
+        },
+        {
+          "name": "sysvar_clock",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "address": "SysvarC1ock11111111111111111111111111111111"
+        },
+        {
+          "name": "sysvar_stake_history",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ]
+        },
+        {
+          "name": "sysvar_stake_config",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ]
+        },
+        {
+          "name": "system_program",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "address": "11111111111111111111111111111111"
+        },
+        {
+          "name": "stake_program",
+          "docs": [
+            "CHECKED: stake program id"
+          ]
+        },
+        {
+          "name": "stake_pool_program",
+          "docs": [
+            "CHECKED: stake pool program id"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "seed",
+          "type": {
+            "option": "u32"
+          }
+        }
+      ]
+    },
+    {
+      "name": "cleanup_removed_validator_entries",
+      "discriminator": [
+        211,
+        101,
+        162,
+        27,
+        244,
+        149,
+        45,
+        88
+      ],
+      "accounts": [
+        {
+          "name": "stake_pool",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ]
+        },
+        {
+          "name": "validator_list",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "stake_pool_program",
+          "docs": [
+            "CHECKED: stake pool program id"
+          ]
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "create_token_metadata",
+      "discriminator": [
+        221,
+        80,
+        176,
+        37,
+        153,
+        188,
+        160,
+        68
+      ],
+      "accounts": [
+        {
+          "name": "stake_pool",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "manager",
+          "signer": true
+        },
+        {
+          "name": "stake_pool_withdraw_authority",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "pool_mint",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "payer",
+          "signer": true
+        },
+        {
+          "name": "token_metadata",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "inline_mpl_token_metadata",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "system_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_pool_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "symbol",
+          "type": "string"
+        },
+        {
+          "name": "uri",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "decrease_additional_validator_stake",
+      "discriminator": [
+        90,
+        22,
+        113,
+        73,
+        21,
+        229,
+        33,
+        83
+      ],
+      "accounts": [
+        {
+          "name": "stake_pool",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "staker",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "signer": true
+        },
+        {
+          "name": "stake_pool_withdraw_authority",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "validator_list",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "reserve_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "validator_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "ephemeral_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "transient_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "sysvar_clock",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "sysvar_stake_history",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "system_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_pool_program",
+          "docs": [
+            "CHECKED: stake pool program id"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "lamports",
+          "type": "u64"
+        },
+        {
+          "name": "transient_stake_seed",
+          "type": "u64"
+        },
+        {
+          "name": "ephemeral_stake_seed",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "decrease_additional_validator_stake_with_list",
+      "discriminator": [
+        175,
+        91,
+        198,
+        67,
+        6,
+        132,
+        127,
+        127
+      ],
+      "accounts": [
+        {
+          "name": "stake_pool",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "staker",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "signer": true
+        },
+        {
+          "name": "stake_pool_withdraw_authority",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "validator_list",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "reserve_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "validator_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "ephemeral_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "transient_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "sysvar_clock",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "sysvar_stake_history",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "system_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_pool_program",
+          "docs": [
+            "CHECKED: stake pool program id"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "vote_account",
+          "type": "pubkey"
+        },
+        {
+          "name": "lamports",
+          "type": "u64"
+        },
+        {
+          "name": "ephemeral_stake_seed",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "decrease_additional_validator_stake_with_vote",
+      "discriminator": [
+        153,
+        95,
+        156,
+        193,
+        12,
+        152,
+        44,
+        11
+      ],
+      "accounts": [
+        {
+          "name": "stake_pool",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "staker",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "signer": true
+        },
+        {
+          "name": "stake_pool_withdraw_authority",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "validator_list",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "reserve_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "validator_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "ephemeral_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "transient_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "sysvar_clock",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "sysvar_stake_history",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "system_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_pool_program",
+          "docs": [
+            "CHECKED: stake pool program id"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "vote_account",
+          "type": "pubkey"
+        },
+        {
+          "name": "lamports",
+          "type": "u64"
+        },
+        {
+          "name": "validator_stake_seed",
+          "type": {
+            "option": "u32"
+          }
+        },
+        {
+          "name": "transient_stake_seed",
+          "type": "u64"
+        },
+        {
+          "name": "ephemeral_stake_seed",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "decrease_validator_stake_with_reserve",
+      "discriminator": [
+        237,
+        216,
+        202,
+        170,
+        243,
+        151,
+        208,
+        143
+      ],
+      "accounts": [
+        {
+          "name": "stake_pool",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "staker",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "signer": true
+        },
+        {
+          "name": "stake_pool_withdraw_authority",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "validator_list",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "reserve_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "validator_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "transient_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "sysvar_clock",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "sysvar_stake_history",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "system_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_pool_program",
+          "docs": [
+            "CHECKED: stake pool program id"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "lamports",
+          "type": "u64"
+        },
+        {
+          "name": "transient_stake_seed",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "decrease_validator_stake_with_vote",
+      "discriminator": [
+        71,
+        214,
+        65,
+        52,
+        211,
+        195,
+        165,
+        174
+      ],
+      "accounts": [
+        {
+          "name": "stake_pool",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "staker",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "signer": true
+        },
+        {
+          "name": "stake_pool_withdraw_authority",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "validator_list",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "reserve_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "validator_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "transient_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "sysvar_clock",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "sysvar_stake_history",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "system_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_pool_program",
+          "docs": [
+            "CHECKED: stake pool program id"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "vote_account_address",
+          "type": "pubkey"
+        },
+        {
+          "name": "lamports",
+          "type": "u64"
+        },
+        {
+          "name": "validator_stake_seed",
+          "type": {
+            "option": "u32"
+          }
+        },
+        {
+          "name": "transient_stake_seed",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "deposit_sol",
+      "discriminator": [
+        108,
+        81,
+        78,
+        117,
+        125,
+        155,
+        56,
+        200
+      ],
+      "accounts": [
+        {
+          "name": "stake_pool",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "stake_pool_withdraw_authority",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "reserve_stake_account",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "lamports_from",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "signer": true
+        },
+        {
+          "name": "pool_tokens_to",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "manager_fee_account",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "referrer_pool_tokens_account",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "pool_mint",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "system_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "token_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "sol_deposit_authority",
+          "docs": [
+            "CHECKED: account is optional and validated on the stake pool program"
+          ],
+          "signer": true,
+          "optional": true
+        },
+        {
+          "name": "stake_pool_program",
+          "docs": [
+            "CHECKED: account is optional and validated on the stake pool program"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "lamports_in",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "deposit_sol_with_slippage",
+      "discriminator": [
+        183,
+        44,
+        178,
+        14,
+        3,
+        63,
+        244,
+        231
+      ],
+      "accounts": [
+        {
+          "name": "stake_pool",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "stake_pool_withdraw_authority",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "reserve_stake_account",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "lamports_from",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "signer": true
+        },
+        {
+          "name": "pool_tokens_to",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "manager_fee_account",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "referrer_pool_tokens_account",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "pool_mint",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "system_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "token_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "sol_deposit_authority",
+          "docs": [
+            "CHECKED: account is optional and validated on the stake pool program"
+          ],
+          "signer": true,
+          "optional": true
+        },
+        {
+          "name": "stake_pool_program",
+          "docs": [
+            "CHECKED: account is optional and validated on the stake pool program"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "lamports_in",
+          "type": "u64"
+        },
+        {
+          "name": "minimum_pool_tokens_out",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "deposit_stake",
+      "discriminator": [
+        160,
+        167,
+        9,
+        220,
+        74,
+        243,
+        228,
+        43
+      ],
+      "accounts": [
+        {
+          "name": "deposit_stake_withdraw_authority",
+          "signer": true
+        },
+        {
+          "name": "stake_pool",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "validator_list_storage",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "stake_pool_deposit_authority",
+          "docs": [
+            "CHECKED: account required for the stake pool program, optinal signer"
+          ]
+        },
+        {
+          "name": "stake_pool_withdraw_authority",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ]
+        },
+        {
+          "name": "deposit_stake_address",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "validator_stake_account",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "reserve_stake_account",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "pool_tokens_to",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "manager_fee_account",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "referrer_pool_tokens_account",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "pool_mint",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "sysvar_clock",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ]
+        },
+        {
+          "name": "sysvar_stake_history",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ]
+        },
+        {
+          "name": "token_program",
+          "docs": [
+            "CHECKED: token program id"
+          ]
+        },
+        {
+          "name": "stake_program",
+          "docs": [
+            "CHECKED: stake program id"
+          ]
+        },
+        {
+          "name": "stake_pool_program",
+          "docs": [
+            "CHECKED: stake pool program id"
+          ]
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "deposit_stake_with_slippage",
+      "discriminator": [
+        62,
+        201,
+        43,
+        176,
+        84,
+        126,
+        81,
+        46
+      ],
+      "accounts": [
+        {
+          "name": "deposit_stake_withdraw_authority",
+          "signer": true
+        },
+        {
+          "name": "stake_pool",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "validator_list_storage",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "stake_pool_deposit_authority",
+          "docs": [
+            "CHECKED: account required for the stake pool program, optinal signer"
+          ]
+        },
+        {
+          "name": "stake_pool_withdraw_authority",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ]
+        },
+        {
+          "name": "deposit_stake_address",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "validator_stake_account",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "reserve_stake_account",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "pool_tokens_to",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "manager_fee_account",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "referrer_pool_tokens_account",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "pool_mint",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "sysvar_clock",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "address": "SysvarC1ock11111111111111111111111111111111"
+        },
+        {
+          "name": "sysvar_stake_history",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "address": "SysvarStakeHistory1111111111111111111111111"
+        },
+        {
+          "name": "token_program",
+          "docs": [
+            "CHECKED: token program id"
+          ]
+        },
+        {
+          "name": "stake_program",
+          "docs": [
+            "CHECKED: stake program id"
+          ]
+        },
+        {
+          "name": "stake_pool_program",
+          "docs": [
+            "CHECKED: stake pool program id"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "minimum_pool_tokens_out",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "increase_additional_validator_stake",
+      "discriminator": [
+        93,
+        136,
+        94,
+        230,
+        32,
+        54,
+        167,
+        242
+      ],
+      "accounts": [
+        {
+          "name": "stake_pool",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "staker",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "signer": true
+        },
+        {
+          "name": "stake_pool_withdraw_authority",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "validator_list",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "reserve_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "ephemeral_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "transient_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "validator_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "validator",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "sysvar_clock",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "sysvar_stake_history",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "sysvar_stake_config",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "system_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_pool_program",
+          "docs": [
+            "CHECKED: stake pool program id"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "lamports",
+          "type": "u64"
+        },
+        {
+          "name": "transient_stake_seed",
+          "type": "u64"
+        },
+        {
+          "name": "ephemeral_stake_seed",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "increase_additional_validator_stake_with_list",
+      "discriminator": [
+        105,
+        27,
+        208,
+        196,
+        90,
+        153,
+        229,
+        7
+      ],
+      "accounts": [
+        {
+          "name": "stake_pool",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "staker",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "signer": true
+        },
+        {
+          "name": "stake_pool_withdraw_authority",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "validator_list",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "reserve_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "ephemeral_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "transient_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "validator_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "validator",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "sysvar_clock",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "sysvar_stake_history",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "sysvar_stake_config",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "system_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_pool_program",
+          "docs": [
+            "CHECKED: stake pool program id"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "vote_account",
+          "type": "pubkey"
+        },
+        {
+          "name": "lamports",
+          "type": "u64"
+        },
+        {
+          "name": "ephemeral_stake_seed",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "increase_additional_validator_stake_with_vote",
+      "discriminator": [
+        218,
+        205,
+        214,
+        224,
+        168,
+        159,
+        134,
+        8
+      ],
+      "accounts": [
+        {
+          "name": "stake_pool",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "staker",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "signer": true
+        },
+        {
+          "name": "stake_pool_withdraw_authority",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "validator_list",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "reserve_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "ephemeral_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "transient_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "validator_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "validator",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "sysvar_clock",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "sysvar_stake_history",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "sysvar_stake_config",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "system_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_pool_program",
+          "docs": [
+            "CHECKED: stake pool program id"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "vote_account",
+          "type": "pubkey"
+        },
+        {
+          "name": "lamports",
+          "type": "u64"
+        },
+        {
+          "name": "validator_stake_seed",
+          "type": {
+            "option": "u32"
+          }
+        },
+        {
+          "name": "transient_stake_seed",
+          "type": "u64"
+        },
+        {
+          "name": "ephemeral_stake_seed",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "increase_validator_stake",
+      "discriminator": [
+        5,
+        121,
+        50,
+        243,
+        14,
+        159,
+        97,
+        6
+      ],
+      "accounts": [
+        {
+          "name": "stake_pool",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "staker",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "signer": true
+        },
+        {
+          "name": "stake_pool_withdraw_authority",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "validator_list",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "reserve_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "transient_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "validator_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "validator",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "sysvar_clock",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "sysvar_rent",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "sysvar_stake_history",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "sysvar_stake_config",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "system_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_pool_program",
+          "docs": [
+            "CHECKED: stake pool program id"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "lamports",
+          "type": "u64"
+        },
+        {
+          "name": "transient_stake_seed",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "increase_validator_stake_with_vote",
+      "discriminator": [
+        202,
+        72,
+        176,
+        231,
+        50,
+        197,
+        246,
+        57
+      ],
+      "accounts": [
+        {
+          "name": "stake_pool",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "staker",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "signer": true
+        },
+        {
+          "name": "stake_pool_withdraw_authority",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "validator_list",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "reserve_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "transient_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "validator_stake",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "validator",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "sysvar_clock",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "sysvar_rent",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "sysvar_stake_history",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "sysvar_stake_config",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "system_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_pool_program",
+          "docs": [
+            "CHECKED: stake pool program id"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "vote_account",
+          "type": "pubkey"
+        },
+        {
+          "name": "lamports",
+          "type": "u64"
+        },
+        {
+          "name": "validator_stake_seed",
+          "type": {
+            "option": "u32"
+          }
+        },
+        {
+          "name": "transient_stake_seed",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "initialize",
+      "discriminator": [
+        175,
+        175,
+        109,
+        31,
+        13,
+        152,
+        155,
+        237
+      ],
+      "accounts": [
+        {
+          "name": "stake_pool",
+          "docs": [
+            "CHECKED: signer required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "manager",
+          "docs": [
+            "CHECKED: signer required for the stake pool program"
+          ],
+          "signer": true
+        },
+        {
+          "name": "staker",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_pool_withdraw_authority",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ]
+        },
+        {
+          "name": "validator_list",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "reserve_stake",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ]
+        },
+        {
+          "name": "pool_mint",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ]
+        },
+        {
+          "name": "manager_pool_account",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ]
+        },
+        {
+          "name": "token_program",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ]
+        },
+        {
+          "name": "deposit_authority",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "optional": true
+        },
+        {
+          "name": "stake_pool_program",
+          "docs": [
+            "CHECKED: stake pool program id"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "fee",
+          "type": {
+            "defined": {
+              "name": "Fee"
+            }
+          }
+        },
+        {
+          "name": "withdrawal_fee",
+          "type": {
+            "defined": {
+              "name": "Fee"
+            }
+          }
+        },
+        {
+          "name": "deposit_fee",
+          "type": {
+            "defined": {
+              "name": "Fee"
+            }
+          }
+        },
+        {
+          "name": "referral_fee",
+          "type": "u8"
+        },
+        {
+          "name": "max_validators",
+          "type": "u32"
+        }
+      ]
+    },
+    {
+      "name": "remove_validator_from_pool",
+      "discriminator": [
+        161,
+        32,
+        213,
+        239,
+        221,
+        15,
+        181,
+        114
+      ],
+      "accounts": [
+        {
+          "name": "stake_pool",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "staker",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_pool_withdraw_authority",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ]
+        },
+        {
+          "name": "validator_list",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "stake_account",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "transient_stake_account",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "sysvar_clock",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "address": "SysvarC1ock11111111111111111111111111111111"
+        },
+        {
+          "name": "stake_program",
+          "docs": [
+            "CHECKED: stake program id"
+          ]
+        },
+        {
+          "name": "stake_pool_program",
+          "docs": [
+            "CHECKED: stake pool program id"
+          ]
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "set_fee",
+      "discriminator": [
+        18,
+        154,
+        24,
+        18,
+        237,
+        214,
+        19,
+        80
+      ],
+      "accounts": [
+        {
+          "name": "stake_pool",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "manager",
+          "signer": true
+        },
+        {
+          "name": "stake_pool_program",
+          "docs": [
+            "CHECKED: stake pool program id"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "fee",
+          "type": {
+            "defined": {
+              "name": "FeeType"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "set_funding_authority",
+      "discriminator": [
+        48,
+        2,
+        114,
+        83,
+        165,
+        222,
+        71,
+        233
+      ],
+      "accounts": [
+        {
+          "name": "stake_pool",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "manager",
+          "signer": true
+        },
+        {
+          "name": "new_sol_deposit_authority",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "optional": true
+        },
+        {
+          "name": "stake_pool_program",
+          "docs": [
+            "CHECKED: stake pool program id"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "funding_type",
+          "type": {
+            "defined": {
+              "name": "FundingType"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "set_manager",
+      "discriminator": [
+        30,
+        197,
+        171,
+        92,
+        121,
+        184,
+        151,
+        165
+      ],
+      "accounts": [
+        {
+          "name": "stake_pool",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "manager",
+          "signer": true
+        },
+        {
+          "name": "new_manager",
+          "signer": true
+        },
+        {
+          "name": "new_fee_receiver",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_pool_program",
+          "docs": [
+            "CHECKED: stake pool program id"
+          ]
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "set_preferred_validator",
+      "discriminator": [
+        114,
+        42,
+        19,
+        98,
+        212,
+        97,
+        109,
+        13
+      ],
+      "accounts": [
+        {
+          "name": "stake_pool",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "staker",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "signer": true
+        },
+        {
+          "name": "validator_list",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_pool_program",
+          "docs": [
+            "CHECKED: stake pool program id"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "validator_type",
+          "type": {
+            "defined": {
+              "name": "PreferredValidatorType"
+            }
+          }
+        },
+        {
+          "name": "validator_vote_address",
+          "type": {
+            "option": "pubkey"
+          }
+        }
+      ]
+    },
+    {
+      "name": "set_staker",
+      "discriminator": [
+        149,
+        203,
+        114,
+        28,
+        80,
+        138,
+        17,
+        131
+      ],
+      "accounts": [
+        {
+          "name": "stake_pool",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "set_staker_authority",
+          "signer": true
+        },
+        {
+          "name": "new_staker",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_pool_program",
+          "docs": [
+            "CHECKED: stake pool program id"
+          ]
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "update_stake_pool_balance",
+      "discriminator": [
+        238,
+        181,
+        59,
+        245,
+        177,
+        236,
+        231,
+        88
+      ],
+      "accounts": [
+        {
+          "name": "stake_pool",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "withdraw_authority",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ]
+        },
+        {
+          "name": "validator_list",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "reserve_stake",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ]
+        },
+        {
+          "name": "manager_fee_account",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "stake_pool_mint",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "token_program",
+          "docs": [
+            "CHECKED: stake program id"
+          ]
+        },
+        {
+          "name": "stake_pool_program",
+          "docs": [
+            "CHECKED: stake pool program id"
+          ]
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "update_token_metadata",
+      "discriminator": [
+        243,
+        6,
+        8,
+        23,
+        126,
+        181,
+        251,
+        158
+      ],
+      "accounts": [
+        {
+          "name": "stake_pool",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "manager",
+          "signer": true
+        },
+        {
+          "name": "stake_pool_withdraw_authority",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "pool_mint",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "token_metadata",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "inline_mpl_token_metadata",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_pool_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "symbol",
+          "type": "string"
+        },
+        {
+          "name": "uri",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "update_validator_list_balance",
+      "discriminator": [
+        98,
+        93,
+        78,
+        124,
+        109,
+        4,
+        165,
+        194
+      ],
+      "accounts": [
+        {
+          "name": "stake_pool",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_pool_withdraw_authority",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ]
+        },
+        {
+          "name": "validator_list",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "reserve_stake",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "sysvar_clock",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ]
+        },
+        {
+          "name": "sysvar_stake_history",
+          "docs": [
+            "CHECKED: account required for the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_program",
+          "docs": [
+            "CHECKED: stake program id"
+          ]
+        },
+        {
+          "name": "stake_pool_program",
+          "docs": [
+            "CHECKED: stake pool program id"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "start_index",
+          "type": "u32"
+        },
+        {
+          "name": "no_merge",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "withdraw_sol",
+      "discriminator": [
+        145,
+        131,
+        74,
+        136,
+        65,
+        137,
+        42,
+        38
+      ],
+      "accounts": [
+        {
+          "name": "stake_pool",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "stake_pool_withdraw_authority",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "user_transfer_authority",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "signer": true
+        },
+        {
+          "name": "pool_tokens_from",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "reserve_stake_account",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "lamports_to",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "manager_fee_account",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "pool_mint",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "sysvar_clock",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "sysvar_stake_history",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "token_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "sol_withdraw_authority",
+          "docs": [
+            "CHECKED: account is optional and validated on the stake pool program"
+          ],
+          "signer": true,
+          "optional": true
+        },
+        {
+          "name": "stake_pool_program",
+          "docs": [
+            "CHECKED: account is optional and validated on the stake pool program"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "pool_tokens_in",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "withdraw_sol_with_slippage",
+      "discriminator": [
+        75,
+        134,
+        131,
+        4,
+        227,
+        55,
+        242,
+        84
+      ],
+      "accounts": [
+        {
+          "name": "stake_pool",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "stake_pool_withdraw_authority",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "user_transfer_authority",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "signer": true
+        },
+        {
+          "name": "pool_tokens_from",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "reserve_stake_account",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "lamports_to",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "manager_fee_account",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "pool_mint",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "sysvar_clock",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "sysvar_stake_history",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "token_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "sol_withdraw_authority",
+          "docs": [
+            "CHECKED: account is optional and validated on the stake pool program"
+          ],
+          "signer": true,
+          "optional": true
+        },
+        {
+          "name": "stake_pool_program",
+          "docs": [
+            "CHECKED: account is optional and validated on the stake pool program"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "pool_tokens_in",
+          "type": "u64"
+        },
+        {
+          "name": "minimum_lamports_out",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "withdraw_stake",
+      "discriminator": [
+        153,
+        8,
+        22,
+        138,
+        105,
+        176,
+        87,
+        66
+      ],
+      "accounts": [
+        {
+          "name": "stake_pool",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "validator_list_storage",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "stake_pool_withdraw",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_to_split",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "stake_to_receive",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "user_stake_authority",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "user_transfer_authority",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "signer": true
+        },
+        {
+          "name": "user_pool_token_account",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "manager_fee_account",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "pool_mint",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "sysvar_clock",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "token_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_pool_program",
+          "docs": [
+            "CHECKED: account is optional and validated on the stake pool program"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "pool_tokens_in",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "withdraw_stake_with_slippage",
+      "discriminator": [
+        146,
+        251,
+        51,
+        49,
+        110,
+        80,
+        27,
+        0
+      ],
+      "accounts": [
+        {
+          "name": "stake_pool",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "validator_list_storage",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "stake_pool_withdraw",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_to_split",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "stake_to_receive",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "user_stake_authority",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "user_transfer_authority",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "signer": true
+        },
+        {
+          "name": "user_pool_token_account",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "manager_fee_account",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "pool_mint",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ],
+          "writable": true
+        },
+        {
+          "name": "sysvar_clock",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "token_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_program",
+          "docs": [
+            "CHECKED: account required and validated on the stake pool program"
+          ]
+        },
+        {
+          "name": "stake_pool_program",
+          "docs": [
+            "CHECKED: account is optional and validated on the stake pool program"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "pool_tokens_in",
+          "type": "u64"
+        },
+        {
+          "name": "minimum_lamports_out",
+          "type": "u64"
+        }
+      ]
+    }
+  ],
+  "types": [
+    {
+      "name": "Fee",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "denominator",
+            "docs": [
+              "denominator of the fee ratio"
+            ],
+            "type": "u64"
+          },
+          {
+            "name": "numerator",
+            "docs": [
+              "numerator of the fee ratio"
+            ],
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "FeeType",
+      "docs": [
+        "The type of fees that can be set on the stake pool"
+      ],
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "SolReferral",
+            "fields": [
+              "u8"
+            ]
+          },
+          {
+            "name": "StakeReferral",
+            "fields": [
+              "u8"
+            ]
+          },
+          {
+            "name": "Epoch",
+            "fields": [
+              {
+                "defined": {
+                  "name": "Fee"
+                }
+              }
+            ]
+          },
+          {
+            "name": "StakeWithdrawal",
+            "fields": [
+              {
+                "defined": {
+                  "name": "Fee"
+                }
+              }
+            ]
+          },
+          {
+            "name": "SolDeposit",
+            "fields": [
+              {
+                "defined": {
+                  "name": "Fee"
+                }
+              }
+            ]
+          },
+          {
+            "name": "StakeDeposit",
+            "fields": [
+              {
+                "defined": {
+                  "name": "Fee"
+                }
+              }
+            ]
+          },
+          {
+            "name": "SolWithdrawal",
+            "fields": [
+              {
+                "defined": {
+                  "name": "Fee"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "FundingType",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "StakeDeposit"
+          },
+          {
+            "name": "SolDeposit"
+          },
+          {
+            "name": "SolWithdraw"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PreferredValidatorType",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Deposit"
+          },
+          {
+            "name": "Withdraw"
+          }
+        ]
+      }
+    }
+  ]
+}
